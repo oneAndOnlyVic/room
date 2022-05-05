@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  position: relative;
+}
+body.show-nav-bar::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  background-color: rgba(7, 7, 7, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.header-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header-container header {
+  background: center center/cover no-repeat url("/images/desktop-image-hero-1.jpg");
+  width: 100%;
+  flex-basis: 70%;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+}
+.header-container header .nav-btn {
+  display: inline-block;
+  position: absolute;
+  left: 1rem;
+  margin: 1.9rem 0;
+  width: 25px;
+  height: 20px;
+  background: no-repeat center center/cover url("/images/icon-hamburger.svg");
+  border: none;
+}
+.header-container header .nav-btn:hover {
+  cursor: pointer;
+}
+.header-container header .logo {
+  color: hsl(0deg, 0%, 100%);
+  position: absolute;
+  margin: 2rem 0;
+  font-weight: 900;
+  text-decoration: underline;
+}
+.header-container header .logo:hover {
+  cursor: pointer;
+}
+.header-container header ul {
+  background-color: white;
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  transform: translateY(-100px);
+}
+.header-container header ul.show-nav-bar {
+  animation: nav-bar-slide-in 0.2s ease-in-out forwards;
+}
+.header-container header ul.hide-nav-bar {
+  animation: nav-bar-slide-out 0.2s ease-in-out forwards;
+}
+.header-container header ul .close-btn {
+  display: inline-block;
+  position: absolute;
+  left: 2rem;
+  top: 2.37rem;
+  width: 15px;
+  height: 15px;
+  border: none;
+  background: no-repeat center center/cover url("/images/icon-close.svg");
+}
+.header-container header ul .close-btn:hover {
+  cursor: pointer;
+}
+.header-container header ul li {
+  display: inline-block;
+  color: hsl(0deg, 0%, 0%);
+  margin: 2.5rem 0.5rem;
+  font-size: 12px;
+}
+.header-container header ul li:hover {
+  cursor: pointer;
+}
+.header-container header ul li .nav-item {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 0%);
+}
+.header-container header ul .logo {
+  font-size: 22px;
+}
+.header-container aside {
+  padding: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-container aside h1 {
+  margin: 0rem 0 1rem 0;
+  font-size: 25px;
+}
+.header-container aside p {
+  font-size: 12px;
+  color: hsl(0deg, 0%, 63%);
+}
+.header-container aside p {
+  font-size: 12px;
+  color: hsl(0deg, 0%, 63%);
+}
+.header-container aside .shop-cont {
+  width: 100%;
+}
+.header-container aside .shop-cont .shop-now-txt {
+  margin: 2rem 0 0 0;
+  letter-spacing: 8px;
+  display: inline-block;
+}
+.header-container aside .shop-cont .shop-now-txt:hover {
+  cursor: pointer;
+}
+.header-container aside .shop-cont .arrow {
+  position: relative;
+  top: 10%;
+  width: 50px;
+  display: inline-block;
+  height: 40%;
+  background: no-repeat center url("/images/icon-arrow.svg");
+}
+.header-container aside .shop-cont .arrow:hover {
+  cursor: pointer;
+}
+.header-container aside .btn.right {
+  width: 10%;
+  height: 20%;
+  position: absolute;
+  left: 90%;
+  bottom: 100%;
+  background: hsl(0deg, 0%, 0%) no-repeat center url("/images/icon-angle-right.svg");
+}
+.header-container aside .btn.left {
+  width: 10%;
+  height: 20%;
+  position: absolute;
+  left: 80%;
+  bottom: 100%;
+  background: hsl(0deg, 0%, 0%) no-repeat center url("/images/icon-angle-left.svg");
+}
+.header-container aside .btn:hover {
+  background-color: hsl(0deg, 0%, 27%);
+  cursor: pointer;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+}
+.body-container .img1 {
+  width: 100%;
+}
+.body-container section {
+  padding: 3rem;
+}
+.body-container section h1 {
+  font-size: 13px;
+  margin: 0rem 0 1rem 0;
+  word-spacing: 8px;
+}
+.body-container section p {
+  font-size: 12px;
+  color: hsl(0deg, 0%, 63%);
+}
+.body-container .img2 {
+  width: 100%;
+}
+
+/*Animations*/
+@keyframes nav-bar-slide-in {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes nav-bar-slide-out {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+/*# sourceMappingURL=mobile.css.map */

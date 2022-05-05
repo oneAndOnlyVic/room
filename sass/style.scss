@@ -1,0 +1,256 @@
+/* variables*/
+$dark-gray: hsl(0, 0%, 63%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$darker-gray: hsl(0, 0%, 27%);
+
+$pri-font: 12px;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+    
+}
+
+.header-container{
+    height: 70vh;
+    display: flex;
+    flex-direction: row wrap;
+    
+
+    header{
+        position: relative;
+
+        .slide{
+            position: absolute;
+            background:center center/cover no-repeat url('/images/desktop-image-hero-2.jpg');
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            transform: translateX(0px);
+        }
+
+        background: center center/cover no-repeat url("/images/desktop-image-hero-1.jpg");
+        
+        
+       flex-basis: 60%;
+
+        .logo{
+            display: inline-block;
+            color: white;
+            margin: 2rem;
+            font-weight: 900;
+            position: relative;
+            z-index: 2;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        .nav-btn{
+            display: none;
+        }
+
+        ul{
+             
+             text-align: center;
+             display: inline-block;
+             
+
+            .close-btn{
+                display: none;
+            }
+           
+            
+            li{
+                
+                display: inline-block;
+                
+                margin: 2.5rem 1.5rem;
+                font-size: $pri-font;
+
+                &:hover{
+                    cursor: pointer;
+                }
+
+                .nav-item{
+                    color: $white;
+                    position: relative;
+                    text-decoration: none;
+                    display:flex;
+                    justify-content: center;
+
+                
+
+                    &::before{
+                        content: '';
+                        display: inline-block;
+                        
+                        width: 0%;
+                        height: 15%;
+                        position: absolute;
+                        bottom: -3px;
+                        background-color: white;
+                        transition: all 0.2s ease-out;
+
+                     
+                    
+                    }
+
+                    &:hover{
+
+                        &::before{
+                            width: 100%;
+                            
+                        }
+                       
+                    }
+
+                 
+
+
+              
+                }
+               
+            }
+
+            .logo{
+                font-size: 22px;
+              }
+        }
+       
+    }
+
+   
+    aside{
+        flex-basis: 30%;
+        padding: 5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        z-index: 3;
+
+
+        h1{
+            margin: 0rem 0 1rem 0;
+            font-size: 22px;
+        }
+
+        p{
+            font-size: $pri-font;
+            color: $dark-gray;
+        }
+
+        .shop-cont{
+            width: 100%;
+            
+            .shop-now-txt{
+                margin: 2rem 0 0 0;
+                letter-spacing: 8px;
+                display: inline-block;
+    
+                &:hover{
+                    cursor: pointer;
+                }
+            
+        
+            }
+            .arrow{
+                position: relative;
+                top: 10%;
+                width: 50px;
+                display: inline-block;
+                height: 40%;
+                background:no-repeat center url('/images/icon-arrow.svg');
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+
+        
+
+        .btn{
+            &.right{
+                width: 10%;
+                height: 10%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background:$black no-repeat center url('/images/icon-angle-left.svg');
+               
+            }
+            &.left{
+                width: 10%;
+                height: 10%;
+                position: absolute;
+                left: 10%;
+                bottom: 0;
+                background:$black no-repeat center url('/images/icon-angle-right.svg');
+                
+            }
+
+            &:hover{
+                background-color: $darker-gray;
+                cursor: pointer;
+            }
+
+         
+        }
+    
+    }
+   
+}
+
+.body-container{
+  display: flex;
+
+    .img1{
+        width: 30%;
+    }
+
+    section{
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1{
+          font-size: 13px;
+          margin: 0rem 0 1rem 0;
+          word-spacing: 8px;
+        }
+        p{
+            font-size: $pri-font;
+            color: $dark-gray;
+        }
+
+       
+    }
+
+    .img2{
+        width: 30%;
+    }
+}
+
+
+
+/*smart phones*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
