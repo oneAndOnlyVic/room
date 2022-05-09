@@ -6,11 +6,60 @@ const close_btn = document.querySelector('.close-btn')
 
 const lists = document.querySelectorAll('.nav-item')
 
-console.log(lists)
+
+
+//getting all the slide images and the left and right slider buttons
+const rightBtn = document.querySelector('.right.btn')
+const leftBtn = document.querySelector('.left.btn')
+const slides = document.querySelectorAll('.slide')
+
+//variable to help in sliding by keeping track of what is currentlly in view
+let curSlide = -1;
 
 
 
 
+
+
+rightBtn.addEventListener("click",()=>{
+
+//   Swipe('',slides,'swipe-left','swipe-right',curSlide)
+
+  if(curSlide === -1){
+     slides.forEach(element => {
+         element.classList.remove('swipe-right')
+         element.classList.add('swipe-left')
+         })
+
+         curSlide = slides.length - 1
+  }
+  else{
+      slides[curSlide].classList.remove('swipe-left')
+      slides[curSlide].classList.add('swipe-right')
+      curSlide--
+  }
+ 
+  
+})
+
+leftBtn.addEventListener("click",()=>{
+
+    
+    if(curSlide === (slides.length - 1)){
+        slides.forEach(element => {
+            element.classList.remove('swipe-left')
+            element.classList.add('swipe-right')
+        })
+        curSlide = -1
+    }
+    else{
+        
+        curSlide++
+        slides[curSlide].classList.remove('swipe-right')
+       slides[curSlide].classList.add('swipe-left')
+       
+    }
+})
 
 
 nav_btn.addEventListener('click',()=>{
@@ -26,7 +75,9 @@ close_btn.addEventListener('click',()=>{
 
 document.querySelector('body').addEventListener('click',(e)=>{
 
-    const a = e.target;
+    if(nav_bar.classList.contains('show-nav-bar'))
+    {
+        const a = e.target;
      let menu_item_clicked = false;
 
     lists.forEach(element => {
@@ -47,6 +98,9 @@ document.querySelector('body').addEventListener('click',(e)=>{
         else{
             console.log('eweee')
         }
+    }
+
+   
 })
 
 function show_nav_bar() {
@@ -59,4 +113,22 @@ function remove_nav_bar() {
     nav_bar.classList.remove('show-nav-bar')
     nav_bar.classList.add('hide-nav-bar')
     document.querySelector('body').classList.remove('show-nav-bar')
+}
+
+const Swipe = (direction,array,swipeleft,swiperight,curSlideInd) =>
+{
+   
+  if(curSlide === -1){
+      array.forEach(element => {
+          element.classList.remove(swiperight)
+          element.classList.add(swipeleft)
+          })
+ 
+          curSlide = array.length - 1
+   }
+   else{
+       array[curSlide].classList.remove(swipeleft)
+       array[curSlide].classList.add(swiperight)
+       curSlide--
+   }
 }

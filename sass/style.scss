@@ -10,6 +10,7 @@ $pri-font: 12px;
     margin: 0;
     padding: 0;
     font-family: 'League Spartan', sans-serif;
+   
     
 }
 
@@ -17,18 +18,43 @@ $pri-font: 12px;
     height: 70vh;
     display: flex;
     flex-direction: row wrap;
-    
+    overflow-x: hidden;
 
     header{
         position: relative;
 
         .slide{
-            position: absolute;
-            background:center center/cover no-repeat url('/images/desktop-image-hero-2.jpg');
-            height: 100%;
-            width: 100%;
-            z-index: 0;
-            transform: translateX(0px);
+
+            &.a{
+                position: absolute;
+                background:center center/cover no-repeat url('/images/desktop-image-hero-2.jpg');
+                height: 100%;
+                width: 100%;
+                z-index: 0;
+                transform: translateX(100%);
+
+                &.swipe-left{
+                  animation: swipeleft 1s ease-in-out forwards;
+                }
+                &.swipe-right{
+                    animation: swiperight 1s ease-in-out forwards;
+                }
+            }
+            &.b{
+                position: absolute;
+                background:center center/cover no-repeat url('/images/desktop-image-hero-3.jpg');
+                height: 100%;
+                width: 100%;
+                z-index: 0;
+                transform: translateX(100%);
+                &.swipe-left{
+                    animation: swipeleft 1s ease-in-out forwards;
+                }
+                &.swipe-right{
+                    animation: swiperight 1s ease-in-out forwards;
+                }
+            }
+       
         }
 
         background: center center/cover no-repeat url("/images/desktop-image-hero-1.jpg");
@@ -81,7 +107,7 @@ $pri-font: 12px;
                     text-decoration: none;
                     display:flex;
                     justify-content: center;
-
+                     z-index: 3;
                 
 
                     &::before{
@@ -176,7 +202,7 @@ $pri-font: 12px;
         
 
         .btn{
-            &.right{
+            &.left{
                 width: 10%;
                 height: 10%;
                 position: absolute;
@@ -185,7 +211,7 @@ $pri-font: 12px;
                 background:$black no-repeat center url('/images/icon-angle-left.svg');
                
             }
-            &.left{
+            &.right{
                 width: 10%;
                 height: 10%;
                 position: absolute;
@@ -235,6 +261,17 @@ $pri-font: 12px;
     .img2{
         width: 30%;
     }
+}
+
+
+@keyframes swipeleft {
+    from{transform: translateX(100%);}
+    to{transform: translateX(0%);}
+}
+
+@keyframes swiperight{
+    from{transform: translateX(0%);}
+    to{transform: translateX(100%);}
 }
 
 

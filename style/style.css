@@ -9,19 +9,40 @@
   height: 70vh;
   display: flex;
   flex-direction: row wrap;
+  overflow-x: hidden;
 }
 .header-container header {
   position: relative;
   background: center center/cover no-repeat url("/images/desktop-image-hero-1.jpg");
   flex-basis: 60%;
 }
-.header-container header .slide {
+.header-container header .slide.a {
   position: absolute;
   background: center center/cover no-repeat url("/images/desktop-image-hero-2.jpg");
   height: 100%;
   width: 100%;
   z-index: 0;
-  transform: translateX(0px);
+  transform: translateX(100%);
+}
+.header-container header .slide.a.swipe-left {
+  animation: swipeleft 1s ease-in-out forwards;
+}
+.header-container header .slide.a.swipe-right {
+  animation: swiperight 1s ease-in-out forwards;
+}
+.header-container header .slide.b {
+  position: absolute;
+  background: center center/cover no-repeat url("/images/desktop-image-hero-3.jpg");
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  transform: translateX(100%);
+}
+.header-container header .slide.b.swipe-left {
+  animation: swipeleft 1s ease-in-out forwards;
+}
+.header-container header .slide.b.swipe-right {
+  animation: swiperight 1s ease-in-out forwards;
 }
 .header-container header .logo {
   display: inline-block;
@@ -58,6 +79,7 @@
   text-decoration: none;
   display: flex;
   justify-content: center;
+  z-index: 3;
 }
 .header-container header ul li .nav-item::before {
   content: "";
@@ -115,7 +137,7 @@
 .header-container aside .shop-cont .arrow:hover {
   cursor: pointer;
 }
-.header-container aside .btn.right {
+.header-container aside .btn.left {
   width: 10%;
   height: 10%;
   position: absolute;
@@ -123,7 +145,7 @@
   bottom: 0;
   background: hsl(0deg, 0%, 0%) no-repeat center url("/images/icon-angle-left.svg");
 }
-.header-container aside .btn.left {
+.header-container aside .btn.right {
   width: 10%;
   height: 10%;
   position: absolute;
@@ -161,6 +183,22 @@
   width: 30%;
 }
 
+@keyframes swipeleft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes swiperight {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
 /*smart phones*/
 
 /*# sourceMappingURL=style.css.map */
